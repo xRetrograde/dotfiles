@@ -1,0 +1,41 @@
+#!/bin/sh
+
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitten ssh"
+
+for cmd in mount umount emerge su shutdown poweroff reboot; do
+  alias $cmd="sudo $cmd"
+done
+unset cmd
+
+alias \
+  ls="ls -hN --color=auto --group-directories-first" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi" \
+  ip="ip -color=auto"
+
+alias \
+  l="ls -l" \
+  ll="ls -lAh" \
+  la="ll" \
+  cp="cp -riv" \
+  mv="mv -iv" \
+  rm="rm -rfvI" \
+  mkd="mkdir" \
+  ka="killall" \
+  g="git" \
+  gi="git init" \
+  gs="git status" \
+  gl="git log" \
+  gc="git commit -m" \
+  gb="git branch" \
+  gck="git checkout" \
+  gcl="git clone" \
+  ga="git add" \
+  gp="git push" \
+  sdn="shutdown now" \
+  e="$EDITOR" \
+  v="$EDITOR" \
+  ffmpeg="ffmpeg -hide_banner" \
+  z="zathura" \
+  ff="fastfetch" \
